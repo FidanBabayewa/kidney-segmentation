@@ -46,13 +46,13 @@ Use nnU-Net's data conversion tool to convert the raw KiTS23 files to the nnUNet
 nnUNetv2_convert_KiTS23
 Or manually structure the dataset into:
 
-
+```plaintext
 nnUNet_raw_data_base/nnUNet_raw_data/Dataset220_KiTS2023/
 ├── imagesTr/
 ├── labelsTr/
 3. Define nnU-Net Paths
 Set environment variables:
-
+```
 
 export nnUNet_raw_data_base="/your/path/to/raw"
 export nnUNet_preprocessed="/your/path/to/preprocessed"
