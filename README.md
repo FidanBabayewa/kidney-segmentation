@@ -82,7 +82,7 @@ Follow nnU-Net naming conventions for file names.
 
 nnUNetv2_plan_and_preprocess -d 220 -np 1
 nnUNetv2_train 220 2d 0 -tr nnUNetTrainer_100epochs -p nnUNetPlans
-7. Run Validation Only (Optional)
+7. Run Validation 
 
 nnUNetv2_train 220 2d 0 -tr nnUNetTrainer_100epochs -p nnUNetPlans --val
 8. Run HD95 Evaluation
