@@ -24,7 +24,7 @@ Install dependencies:
 pip install -r requirements.txt
 📁 Project Structure
 
-.
+
 ├── puzzlemix/
 │   └── puzzlemix.py              # Custom PuzzleMix augmentation
 ├── metrics/
@@ -33,6 +33,9 @@ pip install -r requirements.txt
 │   └── run_training.sh           # nnU-Net training command
 ├── README.md
 └── requirements.txt
+
+
+
 🛠️ Instructions
 1. Download KiTS23 Dataset
 Download the official KiTS23 dataset and save it to your local machine.
