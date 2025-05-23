@@ -22,19 +22,18 @@ Key contributions:
 Install dependencies:
 
 pip install -r requirements.txt
+
+```plaintext
 📁 Project Structure
-
-
 ├── puzzlemix/
-│   └── puzzlemix.py              # Custom PuzzleMix augmentation
+│ └── puzzlemix.py # Custom PuzzleMix augmentation
 ├── metrics/
-│   └── hd95_eval.py              # HD95 metric evaluation script
+│ └── hd95_eval.py # HD95 metric evaluation script
 ├── scripts/
-│   └── run_training.sh           # nnU-Net training command
+│ └── run_training.sh # nnU-Net training command
 ├── README.md
-└── requirements.txt
-
-
+├── requirements.txt
+```
 
 🛠️ Instructions
 1. Download KiTS23 Dataset
