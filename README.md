@@ -6,17 +6,17 @@ This repository contains code developed as part of a master's thesis titled:
 
 ---
 
-## 🔍 Overview
+## Overview
 
 This project builds upon the nnU-Net framework to perform medical image segmentation on the **KiTS23 dataset**.
 
 ### Key Contributions:
-- ✅ **PuzzleMix Augmentation** for enhanced 3D medical image generalization
-- ✅ **HD95 Evaluation Metric** for better boundary-focused performance measurement
+-  **PuzzleMix Augmentation** for enhanced 3D medical image generalization
+-  **HD95 Evaluation Metric** for better boundary-focused performance measurement
 
 ---
 
-## ⚙️ Requirements
+##  Requirements
 
 - Python ≥ 3.8  
 - PyTorch ≥ 1.10  
@@ -48,15 +48,11 @@ Download from the official source and place it on your machine.
 2. Convert Data to nnU-Net Format
 Use nnU-Net's conversion tool:
 
-bash
-Copy
-Edit
+
 nnUNetv2_convert_KiTS23
 Or manually structure the dataset:
 
-bash
-Copy
-Edit
+
 nnUNet_raw_data_base/nnUNet_raw_data/Dataset220_KiTS2023/
 ├── imagesTr/
 ├── labelsTr/
@@ -68,10 +64,8 @@ export nnUNet_raw_data_base="/your/path/to/raw"
 export nnUNet_preprocessed="/your/path/to/preprocessed"
 export nnUNet_results="/your/path/to/results"
 4. Run PuzzleMix Augmentation
-▶️ Test PuzzleMix:
-bash
-Copy
-Edit
+ Test PuzzleMix:
+
 python puzzlemix/test_puzzle_mix.py
 This script loads sample data and applies one of the PuzzleMix algorithms. Augmented outputs are saved in your target folder.
 
@@ -80,28 +74,20 @@ You can experiment with puzzlemix.py, puzzle_mix.py, and puzzlemix_augmentation.
 5. Add Augmented Images to Training Set
 Move augmented .nii.gz files into:
 
-bash
-Copy
-Edit
+
 Dataset220_KiTS2023/imagesTr/
 Dataset220_KiTS2023/labelsTr/
 Follow nnU-Net naming conventions for file names.
 
 6. Preprocess and Train
-bash
-Copy
-Edit
+
 nnUNetv2_plan_and_preprocess -d 220 -np 1
 nnUNetv2_train 220 2d 0 -tr nnUNetTrainer_100epochs -p nnUNetPlans
 7. Run Validation Only (Optional)
-bash
-Copy
-Edit
+
 nnUNetv2_train 220 2d 0 -tr nnUNetTrainer_100epochs -p nnUNetPlans --val
 8. Run HD95 Evaluation
-bash
-Copy
-Edit
+
 python metrics/hd95_eval.py
 This script computes:
 
@@ -111,14 +97,13 @@ Median HD95
 
 Standard Deviation
 
-📌 Notes
+Notes
 Make sure to preprocess with nnUNetv2_plan_and_preprocess before training.
 
-PuzzleMix and HD95 are custom additions — not in the official nnU-Net repo.
+PuzzleMix and HD95 are custom additions.
 
-This project was developed on limited GPU memory — tweak batch size or patch size as needed.
 
-👩‍💻 Author
+Author
 Fidan Babayeva
 MSc Computer Science
 University of Szeged
