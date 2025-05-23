@@ -27,9 +27,8 @@ Install all dependencies:
 ```bash
 pip install -r requirements.txt
 📁 Project Structure
-graphql
-Copy
-Edit
+
+
 ├── puzzlemix/
 │   ├── puzzlemix.py                  # Original PuzzleMix implementation
 │   ├── puzzle_mix.py                 # Alternative version
