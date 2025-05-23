@@ -40,6 +40,7 @@ pip install -r requirements.txt
 │   └── run_training.sh               # nnU-Net training shell script
 ├── README.md
 ├── requirements.txt
+```
 🛠️ Instructions
 1. Download the KiTS23 Dataset
 Download from the official source and place it on your machine.
