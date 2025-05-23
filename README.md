@@ -20,11 +20,10 @@ Key contributions:
 - nibabel, numpy, medpy, tqdm
 
 Install dependencies:
-```bash
+
 pip install -r requirements.txt
 📁 Project Structure
-bash
-Copy code
+
 .
 ├── puzzlemix/
 │   └── puzzlemix.py              # Custom PuzzleMix augmentation
@@ -41,51 +40,44 @@ Download the official KiTS23 dataset and save it to your local machine.
 2. Run Data Conversion
 Use nnU-Net's data conversion tool to convert the raw KiTS23 files to the nnUNet format:
 
-bash
-Copy code
+
 nnUNetv2_convert_KiTS23
 Or manually structure the dataset into:
 
-bash
-Copy code
+
 nnUNet_raw_data_base/nnUNet_raw_data/Dataset220_KiTS2023/
 ├── imagesTr/
 ├── labelsTr/
 3. Define nnU-Net Paths
 Set environment variables:
 
-bash
-Copy code
+
 export nnUNet_raw_data_base="/your/path/to/raw"
 export nnUNet_preprocessed="/your/path/to/preprocessed"
 export nnUNet_results="/your/path/to/results"
 4. Run PuzzleMix Augmentation
 Run puzzlemix.py to apply PuzzleMix on a few selected KiTS23 cases:
 
-bash
-Copy code
+
 python puzzlemix/puzzlemix.py
 The output augmented images will be saved in the defined output folder.
 
 5. Add Augmented Images to Validation Set
 Take the augmented .nii.gz files and copy them to:
 
-bash
-Copy code
+
 nnUNet_raw_data_base/nnUNet_raw_data/Dataset220_KiTS2023/imagesTr/
 nnUNet_raw_data_base/nnUNet_raw_data/Dataset220_KiTS2023/labelsTr/
 Ensure the filenames follow nnU-Net naming conventions.
 
 6. Preprocess and Train
-bash
-Copy code
+
 nnUNetv2_plan_and_preprocess -d 220 -np 1
 nnUNetv2_train 220 2d 0 -tr nnUNetTrainer_100epochs -p nnUNetPlans
 7. Run Validation Only (Optional)
 After training is complete:
 
-bash
-Copy code
+
 nnUNetv2_train 220 2d 0 -tr nnUNetTrainer_100epochs -p nnUNetPlans --val
 8. HD95 Evaluation
 bash
@@ -100,8 +92,4 @@ PuzzleMix and HD95 are not part of nnU-Net by default — this repository provid
 
 This code was developed under GPU memory and storage constraints — you may need to adjust batch_size, patch_size, or augment fewer samples if using limited hardware.
 
-📚 Citation
-If you use this code or approach, please consider citing the original nnU-Net paper:
 
-Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021).
-nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature Methods, 18(2), 203–211.
