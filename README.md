@@ -103,7 +103,4 @@ Make sure to preprocess with nnUNetv2_plan_and_preprocess before training.
 PuzzleMix and HD95 are custom additions.
 
 
-Author
-Fidan Babayeva
-MSc Computer Science
-University of Szeged
+
